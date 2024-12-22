@@ -1,0 +1,183 @@
+$Back-color: #FFFFFF;
+$Text-color: #374151;
+$Title-color: #991B1B;
+$Disc-color: #F0F6FF;
+$Back2-color: #FEF2F2;
+
+.Section2 {
+    display: flex;
+    width: 100%;
+    background-color: $Back2-color;
+    margin-top: 24px;
+    padding: 32px 0px;
+
+    &__inner {
+        width: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        &__title {
+        color: $Title-color;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 30px */
+        text-align: center;
+        margin-bottom: 16px;
+        }
+
+        &__disc {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; /* 18.2px */
+        text-align: center;
+        }
+
+        &__game {
+        width: 100%;
+        display: flex;
+        position: relative;
+        height: 300px;
+        margin-top: 40px;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 40px;
+            filter: blur(10px); /* Làm mờ ban đầu */
+            transition: 0.3s ease-in-out filter;
+        }
+
+        &__image.clear {
+            filter: none; /* Hiển thị rõ hình ảnh khi trả lời đúng hết */
+        }
+
+        &__ans {
+            width: 40%;
+            height: 40%;
+            background-color: #5ae387;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 75px */
+            color: white;
+            border-radius: 16px;
+            transition: 0.2s ease-in all;
+            cursor: pointer;
+            visibility: visible; /* Hiển thị ô mặc định */
+        }
+
+        &__ans.hidden {
+            visibility: hidden; /* Ẩn ô khi trả lời đúng */
+            transition: visibility 0.2s ease-in-out;
+        }
+
+        &__ans:hover {
+            background-color: #e3e15a;
+            transition: 0.2s ease-in all;
+        }
+        }
+    }
+}
+
+/* Popup câu hỏi */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+
+    &__content {
+        h3{
+            text-align: start;
+        }
+    }
+
+    button {
+        padding: 16px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s ease background;
+        text-align: start;
+        width: 100%;
+        background-color: white;
+        border: solid #E5E7EB 1px;
+        border-radius: 8px;
+        margin: 8px 0px;
+    }
+}
+
+/* Popup chúc mừng */
+.congrats-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fef9c3;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff9800;
+        margin-bottom: 16px;
+    }
+
+    &__message {
+        font-size: 16px;
+        color: #374151;
+        margin-bottom: 24px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: #ff9800;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+            background: #e68900;
+        }
+    }
+}
+    
+.Section2__inner__game__ans.hidden {
+    visibility: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền đen mờ */
+    z-index: 999; /* Đặt dưới popup nhưng trên các phần tử khác */
+}

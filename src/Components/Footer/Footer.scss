@@ -1,0 +1,62 @@
+$Back-color: #FFFFFF;
+$Text-color: #374151;
+$Title-color: #991B1B;
+$Disc-color: #EEE;
+$Back2-color: #FEF2F2;
+
+.Footer{
+    background-color: $Title-color;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    width: 100%;
+
+    &__inner{
+        padding: 32px 0px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        img{
+            width: 120px;
+            margin-left: -10px;
+            height: auto;
+        }
+
+        &__title{
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 27px */
+            margin-top: 32px;
+        }
+        &__disc{
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 21px */
+            color: $Disc-color;
+            margin-top: 8px;
+        }
+        &__icon{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__copy{
+        background-color: white;
+        color: $Text-color;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; /* 15.6px */
+        display: flex;
+        padding: 0px 16px;
+        justify-content: center;
+        align-items: center;
+    }
+}
