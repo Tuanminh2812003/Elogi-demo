@@ -242,3 +242,16 @@
         padding: 40px 200px;
     }
 }
+@media screen and (max-width: 750px){
+    .Admin{
+        padding: 40px 40px;
+    }
+}
+@media screen and (max-width: 450px){
+    .Admin{
+        padding: 40px 8px;
+        label{
+            font-size: 14px;
+        }
+    }
+}
